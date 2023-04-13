@@ -7,14 +7,16 @@
 typedef struct s_stack
 {
     int				value;
-    int				index;
-	int				pos;
-	int				target_pos;
-	int				cost_a;
-	int				cost_b;
     struct s_stack	*next;
 }					t_stack;
 
 
+// Swap
+void    sa(t_stack **stack_a);
+void    sb(t_stack **stack_b);
+void    ss(t_stack **stack_a, t_stack **stack_b);
+
+// Utils
+void    ft_putstr(char *str);
 
 #endif
