@@ -8,3 +8,23 @@ void    ft_putstr(char *str)
     while (str[i])
         write(1, &str[i++], 1);
 }
+
+t_stack *last_node(t_stack *stack)
+{
+    t_stack *tmp;
+
+    tmp = stack;
+    while (tmp->next != NULL)
+        tmp = tmp->next;
+    return (tmp);
+}
+
+t_stack *before_last_node(t_stack *stack)
+{
+    t_stack *tmp;
+
+    tmp = stack;
+    while (tmp->next->next != NULL)
+        tmp = tmp->next;
+    return (tmp);
+}
