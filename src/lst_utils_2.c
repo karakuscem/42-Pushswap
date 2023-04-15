@@ -1,44 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_action.c                                    :+:      :+:    :+:   */
+/*   lst_utils_2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/15 21:43:27 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/15 21:43:46 by ckarakus         ###   ########.fr       */
+/*   Created: 2023/04/15 22:10:15 by ckarakus          #+#    #+#             */
+/*   Updated: 2023/04/15 22:13:28 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	rotate(t_stack **stack)
+int	ft_lstunique(t_stack *stack)
 {
 	t_stack	*tmp;
-	t_stack	*last;
+	int		count;
 
-	last = last_node(*stack);
-	tmp = *stack;
-	*stack = (*stack)->next;
-	tmp->next = NULL;
-	last->next = tmp;
+	if (!stack)
+		return (0);
+	count = 1;
+	tmp = stack;
+	while (tmp->next != NULL)
+	{
+		if (tmp->value != tmp->next->value)
+			count++;
+		tmp = tmp->next;
+	}
+	return (count);
 }
 
-void	ra(t_stack **stack_a)
+void	ft_lstclear(t_stack **stack)
 {
-	rotate(stack_a);
-	ft_putstr("ra\n");
-}
+	t_stack	*tmp;
 
-void	rb(t_stack **stack_b)
-{
-	rotate(stack_b);
-	ft_putstr("rb\n");
-}
-
-void	rr(t_stack **stack_a, t_stack **stack_b)
-{
-	rotate(stack_a);
-	rotate(stack_b);
-	ft_putstr("rr\n");
+	if (!stack)
+		return ;
+	while (*stack != NULL)
+	{
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
+	}
 }
