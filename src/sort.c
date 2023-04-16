@@ -6,16 +6,11 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 23:15:10 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/16 03:33:58 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/04/16 04:44:44 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-// If list size is 3 or less, sort it with 3 or less operations.
-// If list size is 5 or less, sort it with 12 or less operations.
-// If list size is 100 or less, sort it with 700 or less operations.
-// If list size is 500 or less, sort it with 5500 or less operations.
 
 static void	sort_3(t_stack **stack_a)
 {
