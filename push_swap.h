@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 21:39:03 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/15 22:13:35 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/04/16 03:23:38 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <stdio.h>
 
 typedef struct s_stack
 {
@@ -46,7 +47,7 @@ void	ss(t_stack **stack_a, t_stack **stack_b);
 // Utils
 void	ft_putstr(char *str);
 void	ft_error(char *str);
-int		ft_atoi(const char *str);
+int		ft_atoi(char *str);
 // Number Utils
 int		ft_isnumber(char *str);
 int		ft_isint(char *str);
@@ -54,10 +55,12 @@ int		ft_isdigit(int c);
 // Stack Utils
 t_stack	*last_node(t_stack *stack);
 t_stack	*before_last_node(t_stack *stack);
-void	ft_lstadd_front(t_stack **stack, t_stack *new);
-t_stack	*ft_lstnew(void *content);
+void	ft_lstadd_back(t_stack **stack, t_stack *new_node);
+t_stack	*ft_lstnew(int content);
 int		ft_lstsize(t_stack *stack);
 int		ft_lstunique(t_stack *stack);
 void	ft_lstclear(t_stack **stack);
+int		ft_issorted(t_stack *stack);
+void	sort(t_stack **stack_a, t_stack **stack_b);
 
 #endif
