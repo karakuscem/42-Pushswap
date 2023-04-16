@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 21:38:18 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/16 03:23:47 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/04/16 03:40:24 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	t_stack *current; // Just for printing
+	//t_stack *current; // Just for printing
 	int		i;
 
 	if (argc < 2)
@@ -38,11 +38,11 @@ int	main(int argc, char **argv)
 		ft_error("Error");
 	}
 	sort(&stack_a, &stack_b);
-	current = stack_a;
+	/*current = stack_a;
 	while (current != NULL)
 	{
 		printf("%d ", current->value);
 		current = current->next;
-	}
+	}*/
 	return (0);
 }
