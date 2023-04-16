@@ -6,11 +6,11 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 21:39:59 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/15 21:41:22 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/04/16 01:25:42 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	push(t_stack **first_stack, t_stack **second_stack)
 {

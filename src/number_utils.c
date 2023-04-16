@@ -6,11 +6,11 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 21:59:22 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/15 22:07:17 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/04/16 01:25:40 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_isdigit(int c)
 {

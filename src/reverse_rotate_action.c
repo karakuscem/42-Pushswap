@@ -6,11 +6,11 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 21:42:54 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/15 21:43:17 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/04/16 01:25:48 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	reverse_rotate(t_stack **stack)
 {

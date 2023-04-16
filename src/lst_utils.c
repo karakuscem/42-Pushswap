@@ -6,13 +6,13 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 21:55:17 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/15 22:09:47 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/04/16 02:23:50 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-t_stack	*ft_lstnew(void *content)
+t_stack	*ft_lstnew(int content)
 {
 	t_stack	*new_node;
 
@@ -24,12 +24,21 @@ t_stack	*ft_lstnew(void *content)
 	return (new_node);
 }
 
-void	ft_lstadd_front(t_stack **stack, t_stack *new)
+void	ft_lstadd_back(t_stack **stack, t_stack *new_node)
 {
-	if (!stack || !new)
+	t_stack	*tmp;
+
+	if (!stack || !new_node)
 		return ;
-	new->next = *stack;
-	*stack = new;
+	if (!*stack)
+	{
+		*stack = new_node;
+		return ;
+	}
+	tmp = *stack;
+	while (tmp->next != NULL)
+		tmp = tmp->next;
+	tmp->next = new_node;
 }
 
 t_stack	*last_node(t_stack *stack)

@@ -6,11 +6,11 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 21:44:29 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/15 21:59:09 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/04/16 03:30:29 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_putstr(char *str)
 {
@@ -27,7 +27,7 @@ void	ft_error(char *str)
 	exit(1);
 }
 
-int	ft_atoi(const char *str)
+int	ft_atoi(char *str)
 {
 	int	i;
 	int	sign;
