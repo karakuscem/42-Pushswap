@@ -65,6 +65,27 @@ static void	sort_5(t_stack **stack_a, t_stack **stack_b)
 		pa(stack_a, stack_b);
 }
 
+static void	sort_4(t_stack **stack_a, t_stack **stack_b)
+{
+	int		i;
+	int		min;
+
+	i = 0;
+	min = find_min(*stack_a);
+	while (i < 1)
+	{
+		if ((*stack_a)->value == min)
+		{
+			pb(stack_a, stack_b);
+			i++;
+		}
+		else
+			ra(stack_a);
+	}
+	sort_3(stack_a);
+	pa(stack_a, stack_b);
+}
+
 void	sort(t_stack **stack_a, t_stack **stack_b)
 {
 	(void)stack_b;
@@ -73,6 +94,8 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 		sa(stack_a);
 	else if (ft_lstsize(*stack_a) == 3)
 		sort_3(stack_a);
+	else if (ft_lstsize(*stack_a) == 4)
+		sort_4(stack_a, stack_b);
 	else if (ft_lstsize(*stack_a) == 5)
 		sort_5(stack_a, stack_b);
 }

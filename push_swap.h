@@ -48,10 +48,12 @@ void	ss(t_stack **stack_a, t_stack **stack_b);
 void	ft_putstr(char *str);
 void	ft_error(char *str);
 int		ft_atoi(char *str);
+
 // Number Utils
 int		ft_isnumber(char *str);
 int		ft_isint(char *str);
 int		ft_isdigit(int c);
+
 // Stack Utils
 t_stack	*last_node(t_stack *stack);
 t_stack	*before_last_node(t_stack *stack);
@@ -62,5 +64,6 @@ int		ft_lstunique(t_stack *stack);
 void	ft_lstclear(t_stack **stack);
 int		ft_issorted(t_stack *stack);
 void	sort(t_stack **stack_a, t_stack **stack_b);
+int		find_min(t_stack *stack);
 
 #endif
