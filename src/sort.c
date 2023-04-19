@@ -39,6 +39,32 @@ static void	sort_3(t_stack **stack_a)
 		rra(stack_a);
 }
 
+static void	sort_5(t_stack **stack_a, t_stack **stack_b)
+{
+	int		i;
+	int		min;
+
+	i = 0;
+	min = find_min(*stack_a);
+	while (i < 2)
+	{
+		if ((*stack_a)->value == min)
+		{
+			pb(stack_a, stack_b);
+			i++;
+			min = find_min(*stack_a);
+		}
+		else
+			ra(stack_a);
+	}
+	sort_3(stack_a);
+	if (ft_lstsize(*stack_a) == 2
+		&& (*stack_b)->value < (*stack_b)->next->value)
+		sa(stack_a);
+	while (*stack_b)
+		pa(stack_a, stack_b);
+}
+
 void	sort(t_stack **stack_a, t_stack **stack_b)
 {
 	(void)stack_b;
@@ -47,4 +73,6 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 		sa(stack_a);
 	else if (ft_lstsize(*stack_a) == 3)
 		sort_3(stack_a);
+	else if (ft_lstsize(*stack_a) == 5)
+		sort_5(stack_a, stack_b);
 }
