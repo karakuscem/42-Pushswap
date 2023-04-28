@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 23:15:10 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/16 04:44:44 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/04/28 03:46:56 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,27 @@
 static void	sort_3(t_stack **stack_a)
 {
 	if ((*stack_a)->value > (*stack_a)->next->value
-		&& (*stack_a)->value < last_node(*stack_a)->value)
+		&& (*stack_a)->value < (*stack_a)->next->next->value)
 		sa(stack_a);
 	else if ((*stack_a)->value > (*stack_a)->next->value
-		&& (*stack_a)->value > last_node(*stack_a)->value
-		&& (*stack_a)->next->value > last_node(*stack_a)->value)
+		&& (*stack_a)->value > (*stack_a)->next->next->value
+		&& (*stack_a)->next->value > (*stack_a)->next->next->value)
 	{
 		sa(stack_a);
 		rra(stack_a);
 	}
 	else if ((*stack_a)->value > (*stack_a)->next->value
-		&& (*stack_a)->value > last_node(*stack_a)->value
-		&& (*stack_a)->next->value < last_node(*stack_a)->value)
+		&& (*stack_a)->value > (*stack_a)->next->next->value
+		&& (*stack_a)->next->value < (*stack_a)->next->next->value)
 		ra(stack_a);
 	else if ((*stack_a)->value < (*stack_a)->next->value
-		&& (*stack_a)->value < last_node(*stack_a)->value)
+		&& (*stack_a)->value < (*stack_a)->next->next->value)
 	{
 		sa(stack_a);
 		ra(stack_a);
 	}
 	else if ((*stack_a)->value < (*stack_a)->next->value
-		&& (*stack_a)->value > last_node(*stack_a)->value)
+		&& (*stack_a)->value > (*stack_a)->next->next->value)
 		rra(stack_a);
 }
 
@@ -86,9 +86,26 @@ static void	sort_5(t_stack **stack_a, t_stack **stack_b)
 		pa(stack_a, stack_b);
 }
 
+void	butterfly_sort(t_stack **a, t_stack **b)
+{
+	int	n;
+	int	i;
+	int	op;
+
+	i = 0;
+	n = ft_lstsize(*a);
+	op = optimaizer(n);
+	while (i < n)
+		effective_pushing(a, b, &i, op);
+	while (*b)
+	{
+		find_max_node(b);
+		pa(a, b);
+	}
+}
+
 void	sort(t_stack **stack_a, t_stack **stack_b)
 {
-	(void)stack_b;
 	if (ft_lstsize(*stack_a) == 2
 		&& (*stack_a)->value > (*stack_a)->next->value)
 		sa(stack_a);
@@ -98,4 +115,9 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 		sort_4(stack_a, stack_b);
 	else if (ft_lstsize(*stack_a) == 5)
 		sort_5(stack_a, stack_b);
+	else if (ft_lstsize(*stack_a) >= 6)
+	{
+		index_stack(stack_a);
+		butterfly_sort(stack_a, stack_b);
+	}
 }

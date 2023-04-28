@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 21:39:03 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/16 03:23:38 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/04/28 03:47:09 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@
 typedef struct s_stack
 {
 	int				value;
+	int				index;
 	struct s_stack	*next;
-}					t_stack;
+}	t_stack;
 
 
 // Reverse Rotate
@@ -54,6 +55,13 @@ int		ft_isnumber(char *str);
 int		ft_isint(char *str);
 int		ft_isdigit(int c);
 
+// Parse
+void	fill_stack(t_stack **stack_a, int argc, char **argv);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+size_t	ft_strlen(const char *s);
+size_t	ft_counter(char const *s, char c);
+void	free_array(char **array);
+
 // Stack Utils
 t_stack	*last_node(t_stack *stack);
 t_stack	*before_last_node(t_stack *stack);
@@ -63,7 +71,15 @@ int		ft_lstsize(t_stack *stack);
 int		ft_lstunique(t_stack *stack);
 void	ft_lstclear(t_stack **stack);
 int		ft_issorted(t_stack *stack);
-void	sort(t_stack **stack_a, t_stack **stack_b);
 int		find_min(t_stack *stack);
+
+// Sorting
+void	index_stack(t_stack **stack);
+int		optimaizer(int size);
+int		get_to_top(t_stack **stack, t_stack *node);
+void	shortest_way(t_stack **stack_b, t_stack *node);
+void	find_max_node(t_stack **stack);
+void	effective_pushing(t_stack **a, t_stack **b, int *i, int op);
+void	sort(t_stack **stack_a, t_stack **stack_b);
 
 #endif
