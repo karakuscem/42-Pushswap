@@ -6,7 +6,7 @@
 #    By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/28 03:47:05 by ckarakus          #+#    #+#              #
-#    Updated: 2023/04/28 03:47:06 by ckarakus         ###   ########.fr        #
+#    Updated: 2023/04/29 21:06:56 by ckarakus         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,12 +25,25 @@ SRCS = ./src/butterfly_utils.c \
 		./src/swap_action.c \
 		./src/utils.c \
 
-BSRCS = 
+BSRCS = ./bonus/checker_bonus.c \
+		./bonus/gnl_bonus.c \
+		./bonus/gnl_utils_bonus.c \
+		./bonus/push_action_bonus.c \
+		./bonus/reverse_rotate_action_bonus.c \
+		./bonus/rotate_action_bonus.c \
+		./bonus/swap_action_bonus.c \
+		./bonus/read_instructions_bonus.c \
+		./bonus/parse_stack_bonus.c \
+		./bonus/parse_utils_bonus.c \
+		./bonus/lst_utils_bonus.c \
+		./bonus/number_utils_bonus.c \
+		./bonus/utils_bonus.c \
+		./bonus/lst_utils_2_bonus.c \
 
 NAME = push_swap
 B_NAME = checker
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 RM = rm -rf
 LIBC = ar -rcs
 
@@ -72,12 +85,10 @@ bonus : $(BSRCS)
 	@echo	"	⠀⠀⠘⣿⣴⠾⠛⠋⠉⠉⠉⠉⠉⠉⠛⠛⠷⣦⣿⠃⠀⠀⠀";
 	@echo	"	⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀";
 
-clean:
-	@make clean -C
+fclean : clean
 
-fclean: clean
-	@rm -rf $(NAME)
-	@make clean -C
+clean :
+	@rm -rf push_swap checker
 
 re: fclean all
 

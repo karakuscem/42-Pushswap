@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/15 21:39:03 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/29 21:12:48 by ckarakus         ###   ########.fr       */
+/*   Created: 2023/04/29 05:03:02 by ckarakus          #+#    #+#             */
+/*   Updated: 2023/04/29 18:56:39 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef CHECKER_BONUS_H
+# define CHECKER_BONUS_H
 
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
 # include <stdio.h>
+# include "gnl_bonus.h"
 
 typedef struct s_stack
 {
@@ -24,7 +25,6 @@ typedef struct s_stack
 	int				index;
 	struct s_stack	*next;
 }	t_stack;
-
 
 // Reverse Rotate
 void	rra(t_stack **stack_a);
@@ -57,8 +57,7 @@ int		ft_isdigit(int c);
 
 // Parse
 void	fill_stack(t_stack **stack_a, int argc, char **argv);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-size_t	ft_strlen(const char *s);
+char	*ft_substr(char const *s, int start, int len);
 size_t	ft_counter(char const *s, char c);
 void	free_array(char **array);
 
@@ -73,13 +72,8 @@ void	ft_lstclear(t_stack **stack);
 int		ft_issorted(t_stack *stack);
 int		find_min(t_stack *stack);
 
-// Sorting
-void	index_stack(t_stack **stack);
-int		optimaizer(int size);
-int		get_to_top(t_stack **stack, t_stack *node);
-void	shortest_way(t_stack **stack_b, t_stack *node);
-void	find_max_node(t_stack **stack);
-void	effective_pushing(t_stack **a, t_stack **b, int *i, int op);
-void	sort(t_stack **stack_a, t_stack **stack_b);
+// Read Instructions
+void	read_instructions(t_stack **stack_a, t_stack **stack_b);
+
 
 #endif

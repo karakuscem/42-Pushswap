@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/15 21:38:18 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/29 19:26:36 by ckarakus         ###   ########.fr       */
+/*   Created: 2023/04/29 04:42:23 by ckarakus          #+#    #+#             */
+/*   Updated: 2023/04/29 18:01:27 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"				
+#include "../checker_bonus.h"
 
 int	main(int argc, char **argv)
 {
@@ -25,14 +25,11 @@ int	main(int argc, char **argv)
 	if (!ft_lstunique(stack_a))
 	{
 		ft_lstclear(&stack_a);
+		ft_lstclear(&stack_b);
 		ft_error("Error\n");
 	}
-	if (ft_issorted(stack_a))
-	{
-		ft_lstclear(&stack_a);
-		return (0);
-	}
-	sort(&stack_a, &stack_b);
+    read_instructions(&stack_a, &stack_b);
 	ft_lstclear(&stack_a);
+	ft_lstclear(&stack_b);
 	return (0);
 }

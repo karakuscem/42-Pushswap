@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   number_utils.c                                     :+:      :+:    :+:   */
+/*   number_utils_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/15 21:59:22 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/29 19:41:42 by ckarakus         ###   ########.fr       */
+/*   Created: 2023/04/29 17:23:27 by ckarakus          #+#    #+#             */
+/*   Updated: 2023/04/29 20:08:25 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker_bonus.h"
 
 int	ft_isdigit(int c)
 {
@@ -41,4 +41,3 @@ int	ft_isint(char *str)
 		return (0);
 	return (1);
 }
-

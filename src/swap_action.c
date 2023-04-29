@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 21:43:57 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/28 03:46:55 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/04/29 18:14:52 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,18 @@ static void	swap(t_stack *stack)
 void	sa(t_stack **stack_a)
 {
 	swap(*stack_a);
-	ft_putstr("sa\n");
+	ft_putstr("sa\n", 1);
 }
 
 void	sb(t_stack **stack_b)
 {
 	swap(*stack_b);
-	ft_putstr("sb\n");
+	ft_putstr("sb\n", 1);
 }
 
 void	ss(t_stack **stack_a, t_stack **stack_b)
 {
 	swap(*stack_a);
 	swap(*stack_b);
-	ft_putstr("ss\n");
+	ft_putstr("ss\n", 1);
 }

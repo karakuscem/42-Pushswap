@@ -1,37 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_action.c                                      :+:      :+:    :+:   */
+/*   swap_action_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/15 21:39:59 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/29 18:14:18 by ckarakus         ###   ########.fr       */
+/*   Created: 2023/04/29 16:52:32 by ckarakus          #+#    #+#             */
+/*   Updated: 2023/04/29 16:53:26 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker_bonus.h"
 
-static void	push(t_stack **first_stack, t_stack **second_stack)
+static void	swap(t_stack *stack)
 {
 	t_stack	*tmp;
 
-	if (!*first_stack)
+	if (!stack || !stack->next)
 		return ;
-	tmp = (*first_stack)->next;
-	(*first_stack)->next = *second_stack;
-	*second_stack = *first_stack;
-	*first_stack = tmp;
+	tmp = malloc(sizeof(t_stack));
+	if (!tmp)
+		return ;
+	tmp->value = stack->value;
+	stack->value = stack->next->value;
+	stack->next->value = tmp->value;
+	free(tmp);
 }
 
-void	pa(t_stack **stack_a, t_stack **stack_b)
+void	sa(t_stack **stack_a)
 {
-	push(stack_b, stack_a);
-	ft_putstr("pa\n", 1);
+	swap(*stack_a);
 }
 
-void	pb(t_stack **stack_a, t_stack **stack_b)
+void	sb(t_stack **stack_b)
 {
-	push(stack_a, stack_b);
-	ft_putstr("pb\n", 1);
+	swap(*stack_b);
+}
+
+void	ss(t_stack **stack_a, t_stack **stack_b)
+{
+	swap(*stack_a);
+	swap(*stack_b);
 }

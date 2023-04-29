@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_action.c                                      :+:      :+:    :+:   */
+/*   push_action_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/15 21:39:59 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/29 18:14:18 by ckarakus         ###   ########.fr       */
+/*   Created: 2023/04/29 16:54:47 by ckarakus          #+#    #+#             */
+/*   Updated: 2023/04/29 16:54:59 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker_bonus.h"
 
 static void	push(t_stack **first_stack, t_stack **second_stack)
 {
@@ -27,11 +27,9 @@ static void	push(t_stack **first_stack, t_stack **second_stack)
 void	pa(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_b, stack_a);
-	ft_putstr("pa\n", 1);
 }
 
 void	pb(t_stack **stack_a, t_stack **stack_b)
 {
 	push(stack_a, stack_b);
-	ft_putstr("pb\n", 1);
 }

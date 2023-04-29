@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_stack.c                                      :+:      :+:    :+:   */
+/*   parse_stack_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/28 03:45:32 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/29 19:46:20 by ckarakus         ###   ########.fr       */
+/*   Created: 2023/04/29 17:23:51 by ckarakus          #+#    #+#             */
+/*   Updated: 2023/04/29 18:57:46 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../checker_bonus.h"
 
 char	**ft_split(char const *s, char c)
 {
@@ -52,12 +52,7 @@ void	fill_stack(t_stack **stack_a, int argc, char **argv)
         while (array[i] != NULL)
         {
             if (ft_isnumber(array[i]) == 0 || ft_isint(array[i]) == 0)
-            {
-                if (stack_a)
-                    ft_lstclear(stack_a);
-                free_array(array);
                 ft_error("Error\n");
-            }
             ft_lstadd_back(stack_a, ft_lstnew(ft_atoi(array[i])));
             i++;
         }
@@ -68,11 +63,7 @@ void	fill_stack(t_stack **stack_a, int argc, char **argv)
         while (i < argc - 1)
         {
             if (ft_isnumber(argv[i + 1]) == 0 || ft_isint(argv[i + 1]) == 0)
-            {
-                if (stack_a)
-                    ft_lstclear(stack_a);
                 ft_error("Error\n");
-            }
             ft_lstadd_back(stack_a, ft_lstnew(ft_atoi(argv[i + 1])));
             i++;
         }
