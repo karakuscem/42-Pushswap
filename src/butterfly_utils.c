@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 03:45:38 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/28 03:47:02 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/05/03 18:50:52 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	get_to_top(t_stack **stack, t_stack *node)
 	return (i);
 }
 
-void shortest_way(t_stack **stack_b, t_stack *node)
+void	shortest_way(t_stack **stack_b, t_stack *node)
 {
 	int		size;
 
@@ -58,12 +58,11 @@ void shortest_way(t_stack **stack_b, t_stack *node)
 			rb(stack_b);
 }
 
-
 void	find_max_node(t_stack **stack)
 {
 	t_stack	*tmp;
 	int		max;
-	
+
 	tmp = *stack;
 	max = tmp->value;
 	while (*stack)

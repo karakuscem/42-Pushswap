@@ -6,7 +6,7 @@
 #    By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/28 03:47:05 by ckarakus          #+#    #+#              #
-#    Updated: 2023/04/29 21:06:56 by ckarakus         ###   ########.fr        #
+#    Updated: 2023/05/03 18:15:53 by ckarakus         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ BSRCS = ./bonus/checker_bonus.c \
 NAME = push_swap
 B_NAME = checker
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 LIBC = ar -rcs
 

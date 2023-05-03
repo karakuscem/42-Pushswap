@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 05:03:02 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/29 18:56:39 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/05/03 18:49:53 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,5 @@ int		find_min(t_stack *stack);
 
 // Read Instructions
 void	read_instructions(t_stack **stack_a, t_stack **stack_b);
-
 
 #endif

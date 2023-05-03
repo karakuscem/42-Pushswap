@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 17:24:13 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/29 17:32:48 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/05/03 18:45:31 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_substr(char const *s, int start, int len)
 {
 	char	*to_return;
-	int	i;
+	int		i;
 
 	i = 0;
 	if (!s)

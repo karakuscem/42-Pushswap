@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 22:10:15 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/29 21:12:52 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/05/03 18:48:52 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	ft_issorted(t_stack *stack)
 
 int	find_min(t_stack *stack)
 {
-	int min;
+	int	min;
 
 	min = stack->value;
 	while (stack)

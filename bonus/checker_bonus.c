@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 04:42:23 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/29 18:01:27 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/05/03 18:34:23 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ int	main(int argc, char **argv)
 		ft_lstclear(&stack_b);
 		ft_error("Error\n");
 	}
-    read_instructions(&stack_a, &stack_b);
+	read_instructions(&stack_a, &stack_b);
 	ft_lstclear(&stack_a);
 	ft_lstclear(&stack_b);
+	system("leaks push_swap");
 	return (0);
 }

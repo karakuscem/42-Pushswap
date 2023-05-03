@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 21:39:03 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/29 21:12:48 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/05/03 18:15:44 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ typedef struct s_stack
 	int				index;
 	struct s_stack	*next;
 }	t_stack;
-
 
 // Reverse Rotate
 void	rra(t_stack **stack_a);
