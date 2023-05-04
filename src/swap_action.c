@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 21:43:57 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/29 18:14:52 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/05/04 06:07:47 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ static void	swap(t_stack *stack)
 	tmp->value = stack->value;
 	stack->value = stack->next->value;
 	stack->next->value = tmp->value;
+	tmp->index = stack->index;
+	stack->index = stack->next->index;
+	stack->next->index = tmp->index;
 	free(tmp);
 }
 

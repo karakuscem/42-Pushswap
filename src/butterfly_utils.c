@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 03:45:38 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/05/03 18:50:52 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/05/04 07:26:22 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,20 @@ int	get_to_top(t_stack **stack, t_stack *node)
 
 void	shortest_way(t_stack **stack_b, t_stack *node)
 {
+	t_stack	*tmp;
 	int		size;
+	int		i;
 
+	i = 0;
+	tmp = *stack_b;
 	size = ft_lstsize(*stack_b);
-	if (get_to_top(stack_b, node) > size / 2)
+	while ((*stack_b)->value != node->value)
+	{
+		*stack_b = (*stack_b)->next;
+		i++;
+	}
+	*stack_b = tmp;
+	if (i > size / 2)
 		while ((*stack_b)->value != node->value)
 			rrb(stack_b);
 	else

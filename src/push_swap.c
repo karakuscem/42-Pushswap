@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 21:38:18 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/05/03 18:31:43 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/05/04 07:25:52 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	main(int argc, char **argv)
 		ft_lstclear(&stack_a);
 		return (0);
 	}
+	index_stack(&stack_a);
 	sort(&stack_a, &stack_b);
 	ft_lstclear(&stack_a);
 	return (0);

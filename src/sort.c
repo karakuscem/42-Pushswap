@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 23:15:10 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/29 21:12:40 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/05/04 07:26:03 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,29 @@
 
 static void	sort_3(t_stack **stack_a)
 {
-	if ((*stack_a)->value > (*stack_a)->next->value
-		&& (*stack_a)->value < (*stack_a)->next->next->value)
+	int	a;
+	int	b;
+	int	c;
+
+	a = (*stack_a)->value;
+	b = (*stack_a)->next->value;
+	c = (*stack_a)->next->next->value;
+	if (a > b && a < c)
 		sa(stack_a);
-	else if ((*stack_a)->value > (*stack_a)->next->value
-		&& (*stack_a)->value > (*stack_a)->next->next->value
-		&& (*stack_a)->next->value > (*stack_a)->next->next->value)
+	else if (a < b && a > c)
+		rra(stack_a);
+	else if (a > b && a > c && b < c)
+		ra(stack_a);
+	else if (a > b && a > c && b > c)
 	{
 		sa(stack_a);
 		rra(stack_a);
 	}
-	else if ((*stack_a)->value > (*stack_a)->next->value
-		&& (*stack_a)->value > (*stack_a)->next->next->value
-		&& (*stack_a)->next->value < (*stack_a)->next->next->value)
-		ra(stack_a);
-	else if ((*stack_a)->value < (*stack_a)->next->value
-		&& (*stack_a)->value < (*stack_a)->next->next->value)
+	else if (a < b && a < c && b > c)
 	{
 		sa(stack_a);
 		ra(stack_a);
 	}
-	else if ((*stack_a)->value < (*stack_a)->next->value
-		&& (*stack_a)->value > (*stack_a)->next->next->value)
-		rra(stack_a);
 }
 
 static void	sort_4(t_stack **stack_a, t_stack **stack_b)
@@ -115,9 +115,6 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 		sort_4(stack_a, stack_b);
 	else if (ft_lstsize(*stack_a) == 5)
 		sort_5(stack_a, stack_b);
-	else if (ft_lstsize(*stack_a) >= 6)
-	{
-		index_stack(stack_a);
+	else if (ft_lstsize(*stack_a) >= 13)
 		butterfly_sort(stack_a, stack_b);
-	}
 }
