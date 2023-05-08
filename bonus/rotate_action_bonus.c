@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 16:53:45 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/04/29 16:54:00 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/05/08 21:22:07 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 static void	rotate(t_stack **stack)
 {
-	t_stack	*tmp;
-	t_stack	*last;
+	t_stack	*tmp_first;
+	t_stack	*tmp_second;
 
-	last = last_node(*stack);
-	tmp = *stack;
-	*stack = (*stack)->next;
-	tmp->next = NULL;
-	last->next = tmp;
+	if (!stack || !*stack || !(*stack)->next)
+		return ;
+	tmp_first = *stack;
+	tmp_second = (*stack)->next;
+	*stack = last_node(*stack);
+	(*stack)->next = tmp_first;
+	tmp_first->next = NULL;
+	*stack = tmp_second;
 }
 
 void	ra(t_stack **stack_a)

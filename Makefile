@@ -6,7 +6,7 @@
 #    By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/28 03:47:05 by ckarakus          #+#    #+#              #
-#    Updated: 2023/05/03 18:15:53 by ckarakus         ###   ########.fr        #
+#    Updated: 2023/05/08 21:26:43 by ckarakus         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,10 +46,12 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 LIBC = ar -rcs
+OBJS = ${SRCS:.c=.o}
+BOBJS = $(BSRCS:.c=.o)
 
 all: $(MLX) $(NAME)
 
-$(NAME): $(SRCS)
+$(NAME): $(SRCS) ${OBJS}
 	@gcc $(CFLAGS) $(SRCS) -o $(NAME)
 	@echo	"	⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣠⣄⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
 	@echo	"	⠀⠀⠀⠀⠀⢀⣴⠟⠛⠉⠉⠉⠉⠛⠻⣦⡀⠀⠀⠀⠀⠀⠀";
@@ -67,7 +69,7 @@ $(NAME): $(SRCS)
 	@echo	"	⠀⠀⠘⣿⣴⠾⠛⠋⠉⠉⠉⠉⠉⠉⠛⠛⠷⣦⣿⠃⠀⠀⠀";
 	@echo	"	⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀";
 
-bonus : $(BSRCS)
+bonus : $(BSRCS) ${BOBJS}
 	@gcc $(CFLAGS) $(BSRCS) -o $(B_NAME)
 	@echo	"	⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣠⣄⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
 	@echo	"	⠀⠀⠀⠀⠀⢀⣴⠟⠛⠉⠉⠉⠉⠛⠻⣦⡀⠀⠀⠀⠀⠀⠀";
@@ -86,10 +88,14 @@ bonus : $(BSRCS)
 	@echo	"	⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀";
 
 fclean : clean
+	${RM} ${NAME} ${B_NAME}
 
 clean :
-	@rm -rf push_swap checker
+	${RM} ${OBJS} ${BOBJS}
 
-re: fclean all
+.c.o:
+	@${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+
+re: fclean all 
 
 .PHONY: all bonus clean fclean re .c.o

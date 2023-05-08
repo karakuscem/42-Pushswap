@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 21:39:59 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/05/03 18:49:22 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/05/08 20:48:26 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	push(t_stack **first_stack, t_stack **second_stack)
 {
 	t_stack	*tmp;
 
-	if (!*first_stack)
+	if (!*first_stack || !(*first_stack))
 		return ;
 	tmp = (*first_stack)->next;
 	(*first_stack)->next = *second_stack;
