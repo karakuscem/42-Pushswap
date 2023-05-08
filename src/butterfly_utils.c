@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 03:45:38 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/05/08 20:39:33 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/05/08 23:17:37 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ int	optimaizer(int size)
 	return (sqrt + log - 1);
 }
 
-int	get_to_top(t_stack **stack, t_stack *node)
+int	get_to_top(t_stack **stack, int val)
 {
 	int		i;
 	t_stack	*tmp;
 
 	i = 0;
 	tmp = *stack;
-	while ((*stack)->value != node->value)
+	while ((*stack)->value != val)
 	{
 		*stack = (*stack)->next;
 		i++;

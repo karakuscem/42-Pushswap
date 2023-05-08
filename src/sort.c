@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 23:15:10 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/05/08 21:00:47 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/05/08 23:25:25 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,12 +76,14 @@ static void	sort_5(t_stack **stack_a, t_stack **stack_b)
 			min = find_min(*stack_a);
 		}
 		else
-			ra(stack_a);
+		{
+			if (get_to_top(stack_a, min) > ft_lstsize(*stack_a) / 2)
+				rra(stack_a);
+			else
+				ra(stack_a);
+		}
 	}
 	sort_3(stack_a);
-	if (ft_lstsize(*stack_a) == 2
-		&& (*stack_b)->value < (*stack_b)->next->value)
-		sa(stack_a);
 	while (*stack_b)
 		pa(stack_a, stack_b);
 }
@@ -115,6 +117,6 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 		sort_4(stack_a, stack_b);
 	else if (ft_lstsize(*stack_a) == 5)
 		sort_5(stack_a, stack_b);
-	else if (ft_lstsize(*stack_a) >= 13)
+	else if (ft_lstsize(*stack_a) >= 6)
 		butterfly_sort(stack_a, stack_b);
 }
