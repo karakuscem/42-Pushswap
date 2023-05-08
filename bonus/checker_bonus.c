@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 04:42:23 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/05/08 22:41:08 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/05/08 23:47:27 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ int	main(int argc, char **argv)
 	{
 		ft_lstclear(&stack_a);
 		ft_error("Error\n");
+	}
+	if (ft_issorted(stack_a))
+	{
+		ft_lstclear(&stack_a);
+		return (0);
 	}
 	read_instructions(&stack_a, &stack_b);
 	ft_lstclear(&stack_a);
