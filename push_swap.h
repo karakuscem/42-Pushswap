@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 21:39:03 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/05/08 23:20:45 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/05/09 01:24:02 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ int		find_min(t_stack *stack);
 void	index_stack(t_stack **stack);
 int		optimaizer(int size);
 int		get_to_top(t_stack **stack, int val);
-void	shortest_way(t_stack **stack_b, t_stack *node);
 void	find_max_node(t_stack **stack);
 void	effective_pushing(t_stack **a, t_stack **b, int *i, int op);
 void	sort(t_stack **stack_a, t_stack **stack_b);
