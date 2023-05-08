@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 21:42:54 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/05/08 21:12:31 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/05/09 00:59:22 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ static void	reverse_rotate(t_stack **stack)
 	t_stack	*last;
 	t_stack	*before_last;
 
+	if (!stack || !*stack || !(*stack)->next)
+		return ;
 	last = last_node(*stack);
 	before_last = before_last_node(*stack);
 	tmp = *stack;
