@@ -6,7 +6,7 @@
 #    By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/28 03:47:05 by ckarakus          #+#    #+#              #
-#    Updated: 2023/05/08 21:26:43 by ckarakus         ###   ########.fr        #
+#    Updated: 2023/05/09 01:01:11 by ckarakus         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ BOBJS = $(BSRCS:.c=.o)
 
 all: $(MLX) $(NAME)
 
-$(NAME): $(SRCS) ${OBJS}
+$(NAME): $(SRCS)
 	@gcc $(CFLAGS) $(SRCS) -o $(NAME)
 	@echo	"	⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣠⣄⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
 	@echo	"	⠀⠀⠀⠀⠀⢀⣴⠟⠛⠉⠉⠉⠉⠛⠻⣦⡀⠀⠀⠀⠀⠀⠀";
@@ -69,7 +69,7 @@ $(NAME): $(SRCS) ${OBJS}
 	@echo	"	⠀⠀⠘⣿⣴⠾⠛⠋⠉⠉⠉⠉⠉⠉⠛⠛⠷⣦⣿⠃⠀⠀⠀";
 	@echo	"	⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀";
 
-bonus : $(BSRCS) ${BOBJS}
+bonus : $(BSRCS)
 	@gcc $(CFLAGS) $(BSRCS) -o $(B_NAME)
 	@echo	"	⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣠⣄⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀";
 	@echo	"	⠀⠀⠀⠀⠀⢀⣴⠟⠛⠉⠉⠉⠉⠛⠻⣦⡀⠀⠀⠀⠀⠀⠀";
