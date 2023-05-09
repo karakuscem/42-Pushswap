@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 17:21:34 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/05/09 00:54:13 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/05/09 04:09:47 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ long	ft_atoi(char *str)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = result * 10 + (str[i] - '0');
+		if (result > 2147483647 || result < -2147483648)
+			ft_error("Error\n");
 		i++;
 	}
 	return (result * sign);
