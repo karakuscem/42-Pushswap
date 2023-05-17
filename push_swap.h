@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 21:39:03 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/05/09 01:24:02 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:49:25 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int		ft_isint(char *str);
 int		ft_isdigit(int c);
 
 // Parse
-void	fill_stack(t_stack **stack_a, int argc, char **argv);
+void	fill_stack(t_stack **stack_a, char **argv);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlen(const char *s);
 size_t	ft_counter(char const *s, char c);

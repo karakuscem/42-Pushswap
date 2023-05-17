@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 03:45:32 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/05/09 01:24:58 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:51:49 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,34 +44,26 @@ static void	fill_normal(t_stack **stack_a, char **argv)
 {
 	char	**array;
 	int		i;
+	int		j;
 
-	i = 0;
-	array = ft_split(argv[1], ' ');
-	while (array[i] != NULL)
+	i = 1;
+	while (argv[i] != NULL)
 	{
-		if (ft_isnumber(array[i]) == 0 || ft_isint(array[i]) == 0)
-			ft_error("Error\n");
-		ft_lstadd_back(stack_a, ft_lstnew(ft_atoi(array[i])));
+		array = ft_split(argv[i], ' ');
+		j = 0;
+		while (array[j])
+		{
+			if (ft_isnumber(array[j]) == 0 || ft_isint(array[j]) == 0)
+				ft_error("Error\n");
+			ft_lstadd_back(stack_a, ft_lstnew(ft_atoi(array[j])));
+			j++;
+		}
+		free_array(array);
 		i++;
 	}
-	free_array(array);
 }
 
-void	fill_stack(t_stack **stack_a, int argc, char **argv)
+void	fill_stack(t_stack **stack_a, char **argv)
 {
-	int		i;
-
-	i = 0;
-	if (argc == 2)
-		fill_normal(stack_a, argv);
-	else
-	{
-		while (i < argc - 1)
-		{
-			if (ft_isnumber(argv[i + 1]) == 0 || ft_isint(argv[i + 1]) == 0)
-				ft_error("Error\n");
-			ft_lstadd_back(stack_a, ft_lstnew(ft_atoi(argv[i + 1])));
-			i++;
-		}
-	}
+	fill_normal(stack_a, argv);
 }

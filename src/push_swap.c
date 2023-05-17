@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 21:38:18 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/05/08 23:47:18 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/05/17 17:49:41 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 		return (0);
 	stack_a = NULL;
 	stack_b = NULL;
-	fill_stack(&stack_a, argc, argv);
+	fill_stack(&stack_a, argv);
 	if (!ft_lstunique(stack_a))
 	{
 		ft_lstclear(&stack_a);
