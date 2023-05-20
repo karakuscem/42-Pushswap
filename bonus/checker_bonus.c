@@ -6,7 +6,7 @@
 /*   By: ckarakus <ckarakus@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 04:42:23 by ckarakus          #+#    #+#             */
-/*   Updated: 2023/05/09 00:48:45 by ckarakus         ###   ########.fr       */
+/*   Updated: 2023/05/15 17:33:21 by ckarakus         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	main(int argc, char **argv)
 	if (ft_issorted(stack_a))
 	{
 		ft_lstclear(&stack_a);
+		ft_putstr("OK\n", 1);
 		return (0);
 	}
 	read_instructions(&stack_a, &stack_b);
